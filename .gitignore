@@ -1,0 +1,4 @@
+*.a
+termtools_demo
+obj
+*.o
