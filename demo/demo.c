@@ -6,7 +6,7 @@
 /*   By: kwchu <kwchu@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/22 14:05:41 by kwchu         #+#    #+#                 */
-/*   Updated: 2024/05/24 00:15:09 by kwchu         ########   odam.nl         */
+/*   Updated: 2024/05/24 13:26:35 by kwchu         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,11 @@
 #include <string.h>
 #include "termtools.h"
 #define BUF_SIZE 7
-#define BOUNDS_TOP 2
-#define BOUNDS_LEFT 2
-#define BOUNDS_RIGHT 253
-#define BOUNDS_BOTTOM 253
+#define MARGIN 2
+#define BOUNDS_TOP MARGIN
+#define BOUNDS_LEFT MARGIN
+#define BOUNDS_RIGHT (255 - 32 - MARGIN)
+#define BOUNDS_BOTTOM (255 - 32 - MARGIN)
 
 struct termios origin;
 static void	toggle_bounds(void);
@@ -173,10 +174,9 @@ static void	draw_box(t_mouse r2, char c)
 
 static void	restore_original_state(void)
 {
+	load_terminal_screen();
 	set_terminal_mode(&origin);
 	disable_mouse_tracking();
-	move_cursor_to_last_line();
-	printf("\033[2K");
 	tcflush(STDIN_FILENO, TCIFLUSH);
 	unhide_cursor();
 }
@@ -195,6 +195,7 @@ static void	erase(int x, int y, int size)
 
 static void	initialise_terminal_state(void)
 {
+	save_terminal_screen();
 	set_terminal_rawmode(&origin);
 	enable_mouse_tracking();
 	hide_cursor();
