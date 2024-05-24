@@ -169,7 +169,7 @@ static void	draw_box(t_mouse r2, char c)
 
 static void	restore_original_state(void)
 {
-	load_terminal_saved_snapshot();
+	load_saved_snapshot_terminal();
 	set_terminal_attributes(&origin);
 	disable_mouse_tracking();
 	tcflush(STDIN_FILENO, TCIFLUSH);
@@ -190,7 +190,7 @@ static void	erase(int x, int y, int size)
 
 static void	initialise_terminal_state(void)
 {
-	save_terminal_snapshot();
+	save_snapshot_terminal();
 	set_terminal_rawmode(&origin);
 	enable_mouse_tracking();
 	hide_cursor();
