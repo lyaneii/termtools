@@ -2,3 +2,4 @@
 termtools_demo
 obj
 *.o
+.vscode
