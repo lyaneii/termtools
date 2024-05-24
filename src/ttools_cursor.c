@@ -60,7 +60,7 @@ void	move_cursor_to_last_line(void)
 	fflush(stdout);
 }
 
-void	show_cursor_info(t_mouse cursor, int x, int y)
+void	show_mouse_info(t_mouse cursor, int x, int y)
 {
 	save_cursor_position();
 	move_cursor_to_position(x, y);

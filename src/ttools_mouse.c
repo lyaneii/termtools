@@ -2,10 +2,9 @@
  * @Author: lyaneii 
  * @Date: 2024-05-24 20:00:57 
  * @Last Modified by: lyaneii
- * @Last Modified time: 2024-05-24 20:04:19
+ * @Last Modified time: 2024-05-24 20:56:07
  */
 
-#include <unistd.h>
 #include <stdio.h>
 #include <string.h>
 #include "termtools.h"
@@ -22,20 +21,20 @@ void	disable_mouse_tracking(void)
 	fflush(stdout);
 }
 
-int	is_mouse_event(const unsigned char *code)
+int	is_mouse_event(const unsigned char *b_sequence)
 {
-	if (code && !strncmp("\033[M", (char *)code, 3))
+	if (b_sequence && !strncmp("\033[M", (char *)b_sequence, 3))
 		return (1);
 	return (0);
 }
 
-t_mouse	get_mouse_info(const unsigned char *info)
+t_mouse	get_mouse_info(const unsigned char *b_sequence)
 {
 	t_mouse	mouse;
 
-	mouse.x = info[4] - 32;
-	mouse.y = info[5] - 32;
-	mouse.button_state = info[3];
+	mouse.x = b_sequence[4] - 32;
+	mouse.y = b_sequence[5] - 32;
+	mouse.button_state = b_sequence[3];
 	return (mouse);
 }
 

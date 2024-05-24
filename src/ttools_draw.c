@@ -2,13 +2,13 @@
  * @Author: lyaneii 
  * @Date: 2024-05-24 20:00:50 
  * @Last Modified by: lyaneii
- * @Last Modified time: 2024-05-24 20:04:27
+ * @Last Modified time: 2024-05-24 20:05:33
  */
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "termtools.h"
 #include <string.h>
+#include "termtools.h"
 
 void	ttools_draw_char(int x, int y, char c)
 {

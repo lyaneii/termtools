@@ -13,13 +13,13 @@ void	clear_terminal_screen(void)
 	fflush(stdout);
 }
 
-void	save_terminal_screen(void)
+void	save_snapshot_terminal(void)
 {
 	printf("\033[?1049h");
 	fflush(stdout);
 }
 
-void	load_terminal_screen(void)
+void	load_saved_snapshot_terminal(void)
 {
 	printf("\033[?1049l");
 	fflush(stdout);
