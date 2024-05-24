@@ -6,7 +6,7 @@
 /*   By: kwchu <kwchu@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/23 19:12:28 by kwchu         #+#    #+#                 */
-/*   Updated: 2024/05/23 21:46:55 by kwchu         ########   odam.nl         */
+/*   Updated: 2024/05/24 13:20:44 by kwchu         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ struct	termios;
 void	set_terminal_rawmode(struct termios *original);
 void	set_terminal_mode(struct termios *original);
 void	clear_terminal_screen(void);
+void	save_terminal_screen(void);
+void	load_terminal_screen(void);
 
 void	ttools_draw_char(int x, int y, char c);
 void	ttools_draw_line(int x0, int y0, int x1, int y1, char c);
