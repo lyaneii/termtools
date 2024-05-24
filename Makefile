@@ -26,7 +26,7 @@ ${OBJ}: ${DIR_OBJ}/%.o: ${DIR_SRC}/%.c
 	cc ${CFLAGS} ${INCLUDE} -c $< -o $@
 
 demo:
-	cc ${CFLAGS} ${INCLUDE} demo/demo.c -L. -ltermtools -o demo/termtools_demo
+	cc ${CFLAGS} ${INCLUDE} demo/demo.c -L. -ltermtools -o termtools_demo
 
 clean:
 	rm -f ${OBJ}
