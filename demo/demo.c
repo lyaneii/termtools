@@ -92,7 +92,7 @@ int	main(void)
 			}
 			if (mouse_is_in_bounds(current, BOUNDS_LEFT, BOUNDS_TOP, BOUNDS_RIGHT, BOUNDS_BOTTOM))
 				prev = get_mouse_info(buf);
-			// show_cursor_info(current, 1, 1);
+			// show_mouse_info(current, 1, 1);
 			tcflush(STDIN_FILENO, TCIFLUSH);
 		}
 	}
@@ -169,8 +169,8 @@ static void	draw_box(t_mouse r2, char c)
 
 static void	restore_original_state(void)
 {
-	load_terminal_screen();
-	set_terminal_mode(&origin);
+	load_terminal_saved_snapshot();
+	set_terminal_attributes(&origin);
 	disable_mouse_tracking();
 	tcflush(STDIN_FILENO, TCIFLUSH);
 	unhide_cursor();
@@ -190,7 +190,7 @@ static void	erase(int x, int y, int size)
 
 static void	initialise_terminal_state(void)
 {
-	save_terminal_screen();
+	save_terminal_snapshot();
 	set_terminal_rawmode(&origin);
 	enable_mouse_tracking();
 	hide_cursor();

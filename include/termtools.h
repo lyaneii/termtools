@@ -2,7 +2,7 @@
  * @Author: lyaneii 
  * @Date: 2024-05-24 20:02:01 
  * @Last Modified by: lyaneii
- * @Last Modified time: 2024-05-24 20:54:49
+ * @Last Modified time: 2024-05-24 20:58:06
  */
 
 #ifndef TERMTOOLS_H
@@ -76,9 +76,9 @@ void	set_terminal_attributes(struct termios *termios_p);
 /* Clears all the characters from the terminal. */
 void	clear_terminal_screen(void);
 /* Saves a snapshot of what is currently on the terminal. */
-void	save_terminal_snapshot(void);
+void	save_snapshot_terminal(void);
 /* Loads the last saved snapshot of the terminal. */
-void	load_terminal_saved_snapshot(void);
+void	load_saved_snapshot_terminal(void);
 
 /* Puts char 'c' at p(x, y). */
 void	ttools_draw_char(int x, int y, char c);
