@@ -1,14 +1,9 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        ::::::::            */
-/*   termtools.h                                        :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: kwchu <kwchu@student.codam.nl>               +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2024/05/23 19:12:28 by kwchu         #+#    #+#                 */
-/*   Updated: 2024/05/24 13:20:44 by kwchu         ########   odam.nl         */
-/*                                                                            */
-/* ************************************************************************** */
+/*
+ * @Author: lyaneii 
+ * @Date: 2024-05-24 20:02:01 
+ * @Last Modified by:   lyaneii 
+ * @Last Modified time: 2024-05-24 20:02:01 
+ */
 
 #ifndef TERMTOOLS_H
 # define TERMTOOLS_H
