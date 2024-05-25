@@ -2,6 +2,8 @@ NAME = libtermtools.a
 
 CFLAGS = -Wall -Wextra -Werror
 
+LINKS = -L. -ltermtools
+
 INCLUDE = -I./include
 
 SRC =	ttools_attributes.c \
@@ -25,8 +27,11 @@ ${OBJ}: ${DIR_OBJ}/%.o: ${DIR_SRC}/%.c
 	@mkdir -p ${@D}
 	cc ${CFLAGS} ${INCLUDE} -c $< -o $@
 
-demo:
-	cc ${CFLAGS} ${INCLUDE} demo/demo.c -L. -ltermtools -o termtools_demo
+demo_drawing: demo/demo_drawing.c
+	cc ${CFLAGS} ${INCLUDE} $< ${LINKS} -o $@
+
+demo_rays: demo/demo_rays.c
+	cc ${CFLAGS} ${INCLUDE} $< ${LINKS} -o $@
 
 clean:
 	rm -f ${OBJ}
@@ -38,4 +43,4 @@ all: ${NAME}
 
 re: fclean all
 
-.PHONY: clean fclean all re demo
+.PHONY: clean fclean all re

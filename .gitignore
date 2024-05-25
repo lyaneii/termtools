@@ -1,5 +1,6 @@
 *.a
-termtools_demo
+demo_rays
+demo_drawing
 obj
 *.o
 .vscode
